@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../../styles/global.css';
-import Header from '../../components/Header';
-import Body from '../../components/Body';
+import Header from './Header';
+import Body from './Body';
 
 function Home() {
   return (
