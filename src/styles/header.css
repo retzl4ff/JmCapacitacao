@@ -27,9 +27,9 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(176, 176, 176, 0.279);
+  background: rgba(176, 176, 176, 0.188);
   transition: 0.1s ease-in-out;
-  color: #007bff;
+  color: #000000;
 }
 
 .header.showed {
@@ -38,10 +38,18 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  background-color: #005097;
+  background-color: #11498d;
   color: aliceblue;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 94%;
+  max-width: 1440px;
 }
 
 @keyframes stickySlideDown {
@@ -55,17 +63,14 @@
 
 @media screen and (min-width: 1025px) {
   .logo {
-    margin-left: 20px;
-    margin-right: 50px;
+    margin-right: auto;
   }
-  
 }
 
 .menu {
   list-style-type: none;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  margin-bottom: 0px;
 }
 
 .menu {
@@ -79,16 +84,17 @@
   }
 
   li {
-    margin: 0 25px;
-    padding: 35px 0px;
+    margin: 10px 25px;
+    padding: 25px 0px;
   }
 }
 
 .menu span:hover {
-  color: #1b8cd6;
+  color: #059afe;
 }
 
 .login-button {
+  margin-left: auto;
   background-color: #125bf9;
   color: aliceblue;
   transition: 0.3s;
@@ -96,4 +102,8 @@
 
 .login-button:hover {
   background-color: #1b8cd6;
+}
+
+.logo img {
+  width: 140px;
 }

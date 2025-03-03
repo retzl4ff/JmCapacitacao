@@ -13,6 +13,7 @@ export default [
     rules: {
       'prettier/prettier': ['warn'],
       'react/react-in-jsx-scope': 'off',
+      quotes: ['warn', 'single'],
     },
   },
 ];

@@ -32,40 +32,42 @@ export default function Header() {
     <nav
       className={`header header-component d-flex align-items-center justify-content-center ${isScrolled ? 'showed' : ''}`}
     >
-      <div className="logo">JM LOGO</div>
-      <ul className="menu d-flex">
-        <li onClick={() => scrollToSection('inicio')}>
-          <span>Início</span>
-        </li>
-        <li onClick={() => scrollToSection('servicos')}>
-          <span>Serviços</span>
-        </li>
-        <li onClick={() => scrollToSection('quem')}>
-          <span>Quem somos</span>
-        </li>
-        <li onClick={() => scrollToSection('contato')}>
-          <span>Contato</span>
-        </li>
-      </ul>
-      <button
-        onClick={() => {}}
-        className="login-button rounded border-0 py-2 px-3 position-absolute"
-        style={{ right: '5.2rem' }}
-      >
-        <span
-          style={{
-            fontFamily: 'Poppins',
-            fontSize: '16px',
-            fontWeight: 500,
-            fontStyle: 'normal',
-          }}
+      <div className="menu-header">
+        <div className="logo">
+          <img src="src\assets\JM.png" />
+        </div>
+        <ul className="menu d-flex">
+          <li onClick={() => scrollToSection('inicio')}>
+            <span>Início</span>
+          </li>
+          <li onClick={() => scrollToSection('servicos')}>
+            <span>Serviços</span>
+          </li>
+          <li onClick={() => scrollToSection('quem')}>
+            <span>Quem somos</span>
+          </li>
+          <li onClick={() => scrollToSection('contato')}>
+            <span>Contato</span>
+          </li>
+        </ul>
+        <button
           onClick={() => {
             history('/login');
           }}
+          className="login-button rounded border-0 py-2 px-3"
         >
-          Entrar
-        </span>
-      </button>
+          <span
+            style={{
+              fontFamily: 'Poppins',
+              fontSize: '16px',
+              fontWeight: 500,
+              fontStyle: 'normal',
+            }}
+          >
+            Entrar
+          </span>
+        </button>
+      </div>
     </nav>
   );
 }
