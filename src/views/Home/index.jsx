@@ -6,7 +6,7 @@ import Body from './Body';
 
 function Home() {
   return (
-    <div className="d-flex">
+    <div className="d-flex" style={{ overflowX: 'hidden' }}>
       <Header />
       <Body />
     </div>

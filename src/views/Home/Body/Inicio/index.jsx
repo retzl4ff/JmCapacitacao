@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Inicio() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [videoHeight, setVideoHeight] = useState(1920);
   const videoRef = useRef();
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     if (isLoaded && videoRef.current != null) {
@@ -10,23 +12,37 @@ export default function Inicio() {
     }
   }, [isLoaded]);
 
+  const updateVideoHeight = () => {
+    if (window.innerWidth > videoHeight) {
+      setVideoHeight(window.innerWidth);
+    }
+  };
+
+  useEffect(() => {
+    updateVideoHeight();
+
+    window.addEventListener('resize', updateVideoHeight);
+    return () => window.removeEventListener('resize', updateVideoHeight);
+  }, []);
+
   const handleVideoLoaded = () => {
     setIsLoaded(true);
   };
 
   return (
-    <div id="inicio">
-      <video
-        autoPlay
-        muted
-        loop
-        className="w-100"
-        style={{ objectFit: 'cover', height: '90%' }}
-        onLoadedData={handleVideoLoaded}
-        ref={videoRef}
-      >
-        <source src="src\assets\JM CAPACITACAO.mp4" type="video/mp4" />
-      </video>
+    <div id="inicio" className="position-relative">
+      <div style={{ height: `${videoHeight * 0.5625}px`, overflow: 'hidden' }}>
+        <video
+          autoPlay
+          muted
+          loop
+          style={{ objectFit: 'cover', width: `${videoHeight}px` }}
+          onLoadedData={handleVideoLoaded}
+          ref={videoRef}
+        >
+          <source src="src\assets\JM CAPACITACAO.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div className="position-absolute" style={{ top: '33%', width: '100%' }}>
         <div className="banner-text container d-flex flex-column mb-3">
           <span
@@ -71,7 +87,7 @@ export default function Inicio() {
               Conheça nossos serviços
             </span>
           </button>
-          <button className="button">
+          <button className="button" ref={buttonRef}>
             <span
               style={{
                 fontFamily: 'Poppins',
@@ -88,6 +104,7 @@ export default function Inicio() {
           </button>
         </div>
       </div>
+      <div className="separator" />
     </div>
   );
 }

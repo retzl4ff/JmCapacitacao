@@ -33,18 +33,22 @@ export default function Header() {
       className={`header header-component d-flex align-items-center justify-content-center ${isScrolled ? 'showed' : ''}`}
     >
       <div className="menu-header">
-        <div className="logo">
+        <div
+          className="logo"
+          style={{ cursor: 'pointer' }}
+          onClick={() => window.location.reload()}
+        >
           <img src="src\assets\JM.png" />
         </div>
         <ul className="menu d-flex">
           <li onClick={() => scrollToSection('inicio')}>
             <span>Início</span>
           </li>
-          <li onClick={() => scrollToSection('servicos')}>
-            <span>Serviços</span>
-          </li>
           <li onClick={() => scrollToSection('quem')}>
             <span>Quem somos</span>
+          </li>
+          <li onClick={() => scrollToSection('servicos')}>
+            <span>Serviços</span>
           </li>
           <li onClick={() => scrollToSection('contato')}>
             <span>Contato</span>
