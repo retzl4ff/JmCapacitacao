@@ -29,6 +29,29 @@ export default function Inicio() {
     setIsLoaded(true);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoRef.current?.play();
+        } else {
+          videoRef.current?.pause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div id="inicio" className="position-relative">
       <div style={{ height: `${videoHeight * 0.5625}px`, overflow: 'hidden' }}>
@@ -43,7 +66,7 @@ export default function Inicio() {
           <source src="src\assets\JM CAPACITACAO.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="position-absolute" style={{ top: '33%', width: '100%' }}>
+      <div className="position-absolute" style={{ top: '30%', width: '100%' }}>
         <div className="banner-text container d-flex flex-column mb-3">
           <span
             style={{
