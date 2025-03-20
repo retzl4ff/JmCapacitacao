@@ -88,8 +88,7 @@
 }
 
 .slogan {
-  background: rgb(210,210,210);
-  background: linear-gradient(0deg, rgba(210,210,210,1) 20%, rgba(59,59,59,1) 100%);
+  background: linear-gradient(0deg, rgb(221 221 221) 20%, rgb(47 47 47) 100%);
   span {
     font-family: 'Poppins', serif;
   }
@@ -137,10 +136,32 @@
   height: 100px;
   position: absolute;
   bottom: 0px;
-  background-color: rgba(59, 59, 59, 1);
+  background-color: rgb(47 47 47);
   mask-image: url('../assets/separator.svg');
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: bottom;
 }
 
+.servicos {
+  width: 100%;
+  padding-top: 75px;
+  font-family: 'Poppins', serif;
+}
+
+.servicos-section {
+  width: 60%;
+  font-size: 17px;
+}
+
+.header-servicos {
+  span {
+    font-size: 38px;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(0, 8, 77);
+  }
+}
+
+.descricao-servicos {
+}
