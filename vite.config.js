@@ -8,18 +8,6 @@ export default defineConfig({
     react({
       jsxRuntime: 'automatic',
     }),
-    babel({
-      babelHelpers: 'bundled',
-      presets: ['@babel/preset-env'],
-      plugins: [
-        [
-          '@babel/plugin-proposal-optional-chaining-assign',
-          {
-            version: '2023-07',
-          },
-        ],
-      ],
-    }),
   ],
   server: {
     port: 3000,
