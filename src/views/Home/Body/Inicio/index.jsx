@@ -41,7 +41,7 @@ export default function Inicio() {
           onLoadedData={handleVideoLoaded}
           ref={videoRef}
         >
-          <source src="src\assets\JM CAPACITACAO.mp4" type="video/mp4" />
+          <source src="assets\JM CAPACITACAO.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="position-absolute" style={{ top: '30%', width: '100%' }}>

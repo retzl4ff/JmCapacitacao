@@ -38,7 +38,7 @@ export default function Header() {
           style={{ cursor: 'pointer' }}
           onClick={() => window.location.reload()}
         >
-          <img src="src\assets\JM.png" />
+          <img src="assets\JM.png" />
         </div>
         <ul className="menu d-flex">
           <li onClick={() => scrollToSection('inicio')}>
