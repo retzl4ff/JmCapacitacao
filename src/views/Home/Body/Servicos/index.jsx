@@ -3,11 +3,14 @@ export default function Servicos() {
     <div
       className="servicos position-relative w-100 d-flex flex-column"
       id="servicos"
-      style={{
-        overflow: 'hidden',
-      }}
     >
-      <div className="servicos-section d-flex flex-column">
+      <div
+        className="servicos-section d-flex flex-column"
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
         <div className="header-servicos d-flex justify-content-center">
           <span>Se capacite sem sair do conforto da sua casa!</span>
         </div>

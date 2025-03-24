@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { scrollToSection } from '../../Header';
 
 export default function Inicio() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,29 +29,6 @@ export default function Inicio() {
   const handleVideoLoaded = () => {
     setIsLoaded(true);
   };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          videoRef.current?.play();
-        } else {
-          videoRef.current?.pause();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
 
   return (
     <div id="inicio" className="position-relative">
@@ -94,7 +72,10 @@ export default function Inicio() {
           className="banner-actions d-flex justify-content-center flex-wrap"
           style={{ gap: '60px' }}
         >
-          <button className="button">
+          <button
+            className="button"
+            onClick={() => scrollToSection('servicos')}
+          >
             <span
               style={{
                 fontFamily: 'Poppins',
@@ -102,9 +83,6 @@ export default function Inicio() {
                 fontWeight: 500,
                 fontStyle: 'normal',
                 color: 'white',
-              }}
-              onClick={() => {
-                history('/login');
               }}
             >
               Conheça nossos serviços
@@ -117,9 +95,6 @@ export default function Inicio() {
                 fontSize: '16px',
                 fontWeight: 500,
                 fontStyle: 'normal',
-              }}
-              onClick={() => {
-                history('/login');
               }}
             >
               Entre em contato

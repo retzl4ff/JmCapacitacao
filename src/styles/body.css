@@ -3,9 +3,25 @@
     max-width: 960px !important;
   }
 
+  .card-section {
+    width: 100% !important;
+  }
+
+  .caroussel-buttons {
+    gap: 20px !important;
+  }
+
   .banner-text {
     font-size: 48px !important;
     text-align: center;
+  }
+
+  .voce-merece {
+    font-size: 60px !important;
+  }
+
+  .levamos-serio {
+    font-size: 28px !important;
   }
 
   .banner-actions {
@@ -22,6 +38,22 @@
 }
 
 @media screen and (max-width: 768px) {
+  #inicio {
+    height: 800px !important; 
+  }
+
+  .card-section {
+    width: 100% !important;
+  }
+
+  .caroussel-buttons {
+    gap: 10px !important;
+  }
+  
+  .voce-merece {
+    font-size: 54px !important;
+  }
+
   .container {
     max-width: 720px !important;
   }
@@ -88,7 +120,7 @@
 }
 
 .slogan {
-  background: linear-gradient(0deg, rgb(221 221 221) 20%, rgb(47 47 47) 100%);
+  background: rgb(80, 80, 80);
   span {
     font-family: 'Poppins', serif;
   }
@@ -123,10 +155,20 @@
 }
 
 .cards-section {
-  width: 65%;
+  width: 80%;
   border-radius: 15px;
   background: transparent;
   transition: 0.2s;
+}
+
+.card-section {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4 {
+  font-family: Poppins;
 }
 
 .separator::before {
@@ -136,7 +178,7 @@
   height: 100px;
   position: absolute;
   bottom: 0px;
-  background-color: rgb(47 47 47);
+  background-color: rgb(80, 80, 80);
   mask-image: url('../assets/separator.svg');
   mask-size: cover;
   mask-repeat: no-repeat;
@@ -163,5 +205,48 @@
   }
 }
 
+.caroussel-buttons {
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.active {
+  background-color: #1d63ed;
+  color: white;
+}
+
+.button-carousel {
+  img {
+    width: 22px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+  }
+
+  font-family: Poppins;
+  border: 0;
+  width: 190px;
+  padding: 10px 20px;
+  border-radius: 64px;
+
+  transition: 0.3s;
+}
+
+.render-section {
+  min-height: 350px;
+  margin-bottom: 35px;
+  transition: 0.3s;
+}
+
 .descricao-servicos {
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
 }

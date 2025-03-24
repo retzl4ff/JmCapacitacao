@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+export const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const history = useNavigate();
@@ -18,13 +25,6 @@ export default function Header() {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
-    }
-  };
-
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
