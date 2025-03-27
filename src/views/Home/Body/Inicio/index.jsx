@@ -37,6 +37,7 @@ export default function Inicio() {
           autoPlay
           muted
           loop
+          playsInline
           style={{ objectFit: 'cover', width: `${videoHeight}px` }}
           onLoadedData={handleVideoLoaded}
           ref={videoRef}
