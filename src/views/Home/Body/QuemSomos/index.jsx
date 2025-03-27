@@ -73,7 +73,7 @@ export default function QuemSomos() {
         </div>
       </div>
       <div>
-        <img src="src\assets\banner_wave.png" alt="Banner-wave" />
+        <img src="assets\banner_wave.png" alt="Banner-wave" />
       </div>
     </div>
   );
