@@ -6,19 +6,19 @@ import Conhecimento from './Conhecimento';
 import Anos from './Anos';
 
 const RenderComponent = {
-  0: SalvarVidas,
-  1: Conhecimento,
-  2: Anos,
+  0: <SalvarVidas />,
+  1: <Conhecimento />,
+  2: <Anos />,
 };
 
 export default function QuemSomos() {
-  const [activePage, setActivePage] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
   const [fade, setFade] = useState(false);
 
   const handlePageChange = (page) => {
     setFade(true);
     setTimeout(() => {
-      setActivePage(page);
+      setActiveTab(page);
       setFade(false);
     }, 150);
   };
@@ -64,10 +64,10 @@ export default function QuemSomos() {
           <Card className="cards-section">
             <CarousselButtons
               onClick={handlePageChange}
-              clickedButton={activePage}
+              clickedButton={activeTab}
             />
             <div className={`render-section ${fade ? 'fade-out' : 'fade-in'}`}>
-              {RenderComponent[activePage]()}
+              {RenderComponent[activeTab]}
             </div>
           </Card>
         </div>

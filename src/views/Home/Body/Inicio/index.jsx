@@ -7,12 +7,6 @@ export default function Inicio() {
   const videoRef = useRef();
   const buttonRef = useRef(null);
 
-  useEffect(() => {
-    if (isLoaded && videoRef.current != null) {
-      // videoRef.current.currentTime = 6;
-    }
-  }, [isLoaded]);
-
   const updateVideoHeight = () => {
     if (window.innerWidth > videoHeight) {
       setVideoHeight(window.innerWidth);

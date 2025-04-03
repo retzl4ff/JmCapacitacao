@@ -31,7 +31,9 @@ export default function SalvarVidas() {
             acertadas, mesmo em momentos de alta pressão. Acreditamos que,
             quando as pessoas são preparadas com as habilidades certas e o
             mindset adequado, elas não só evitam riscos, mas também se tornam
-            protagonistas de um ambiente de trabalho mais seguro e consciente.
+            protagonistas de um ambiente de trabalho mais seguro e consciente. E
+            é por isso que nosso objetivo como empresa é &quot;Capacitar para
+            Salvar&quot;.
           </span>
         </p>
       </CardBody>

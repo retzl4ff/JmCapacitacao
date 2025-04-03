@@ -35,6 +35,10 @@
   .slogan-message {
     font-size: 72px !important;
   }
+
+  .carousel-servicos-section {
+    width: 85% !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -73,6 +77,10 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .carousel-servicos-section {
+    width: 85% !important;
   }
 }
 
@@ -238,9 +246,6 @@ h4 {
   transition: 0.3s;
 }
 
-.descricao-servicos {
-}
-
 .fade-in {
   opacity: 1;
   transition: opacity 0.2s ease-in;
@@ -249,4 +254,65 @@ h4 {
 .fade-out {
   opacity: 0;
   transition: opacity 0.2s ease-out;
+}
+
+.carousel-servicos-section {
+  position: relative;
+}
+
+.carousel-servicos-section .swiper-button-prev,
+.carousel-servicos-section .swiper-button-next {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-40%);
+  z-index: 9999 !important;
+}
+
+.carousel-servicos-section .swiper-button-prev {
+  left: calc(50% - 140px);
+}
+
+.carousel-servicos-section .swiper-button-next {
+  right: calc(50% - 140px);
+}
+
+.carousel-servicos-section .swiper-button-prev:after, 
+.carousel-servicos-section .swiper-button-next:after {
+  font-size: 28px;
+}
+
+.adquirir-button {
+  background-color: #125bf9;
+  transition: 0.2s;
+}
+
+.adquirir-button:hover {
+  background-color: #0988f0;
+}
+
+.nav-servicos-button {
+  transition: 0.3s;
+
+  button {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #00084d;
+    color: #00084d;
+  }
+
+  button:hover {
+    background-color: white;
+    color: #00084d;
+  }
+
+  .active-button {
+    border: none;
+    background-color: #00084d;
+    color: white;
+  }
+
+  .active-button:hover {
+    background-color: #142091;
+    color: white;
+  }
 }
