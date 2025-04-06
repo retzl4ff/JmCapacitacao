@@ -11,44 +11,44 @@ const abasServicos = {
 
 const carouselItems = [
   {
-    imageSrc: '../../../../../public/assets/nr-1.jpg',
+    imageSrc: 'assets/nr-1.jpg',
     description:
       'NR 01: DISPOSIÇÕES GERAIS E GERENCIAMENTO DE RISCOS OCUPACIONAIS',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-5.jpg',
+    imageSrc: 'assets/nr-5.jpg',
     description: 'NR 05: COMISSÃO INTERNA DE PREVENÇÃO DE ACIDENTES (CIPA)',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-10-basico.jpg',
+    imageSrc: 'assets/nr-10-basico.jpg',
     description:
       'NR 10: SEGURANÇA EM INSTALAÇÕES E SERVIÇOS EM ELETRICIDADE (BÁSICO)',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-10-sep.jpg',
+    imageSrc: 'assets/nr-10-sep.jpg',
     description:
       'NR 10: SEGURANÇA EM INSTALAÇÕES E SERVIÇOS EM ELETRICIDADE (SEP)',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-11.jpg',
+    imageSrc: 'assets/nr-11.jpg',
     description:
       'NR 11: TRANSPORTE, MOVIMENTAÇÃO, ARMAZENAGEM E MANUSEIO DE MATERIAIS',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-12.jpg',
+    imageSrc: 'assets/nr-12.jpg',
     description: 'NR 12: SEGURANÇA NO TRABALHO EM MÁQUINAS E EQUIPAMENTOS',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-20.jpg',
+    imageSrc: 'assets/nr-20.jpg',
     description:
       'NR 20: SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-23.jpg',
+    imageSrc: 'assets/nr-23.jpg',
     description: 'NR 23: PROTEÇÃO CONTRA INCÊNDIOS',
   },
   {
-    imageSrc: '../../../../../public/assets/nr-35.jpg',
+    imageSrc: 'assets/nr-35.jpg',
     description: 'NR 35: TRABALHO EM ALTURA',
   },
 ];
