@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { Button } from 'reactstrap';
 
-function Online({ carouselItems }) {
+function Online({ carouselItems, fadeInClass }) {
   return (
     <>
       <div
@@ -27,7 +27,7 @@ function Online({ carouselItems }) {
         </div>
         <div className="descricao-servicos d-flex justify-content-center text-center w-100">
           <div className="w-75">
-            <p>
+            <p style={{ fontSize: '18px' }}>
               Com a nossa plataforma de treinamentos online você pode fazer os
               nossos cursos de normas regulamentadoras de onde você estiver
             </p>
@@ -35,7 +35,7 @@ function Online({ carouselItems }) {
         </div>
       </div>
       <div
-        className="carousel-servicos-section"
+        className={`carousel-servicos-section ${fadeInClass}`}
         style={{
           marginLeft: 'auto',
           marginRight: 'auto',

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'reactstrap';
 import Online from './Online';
 import Presencial from './Presencial';
@@ -55,6 +55,15 @@ const carouselItems = [
 
 export default function Servicos() {
   const [activeTab, setActiveTab] = useState(0);
+  const [fadeInClass, setFadeInClass] = useState('');
+
+  const handlePageChange = (page) => {
+    setActiveTab(page);
+    setFadeInClass('fade-out');
+    setTimeout(() => {
+      setFadeInClass('fade-in');
+    }, 150);
+  };
 
   return (
     <div
@@ -64,24 +73,24 @@ export default function Servicos() {
     >
       <div className="nav-servicos-button d-flex justify-content-around align-items-center w-100">
         <div
-          className="d-flex justify-content-center p-1 rounded"
-          style={{ gap: '5px', width: '20%' }}
+          className="button-nav-servicos d-flex justify-content-center p-1 rounded"
+          style={{ gap: '5px', width: '25%' }}
         >
           <Button
-            onClick={() => setActiveTab(0)}
+            onClick={() => handlePageChange(0)}
             className={`${activeTab === 0 && 'active-button'} w-50`}
           >
             Online
           </Button>
           <Button
-            onClick={() => setActiveTab(1)}
+            onClick={() => handlePageChange(1)}
             className={`${activeTab === 1 && 'active-button'} w-50`}
           >
             Presencial
           </Button>
         </div>
       </div>
-      {abasServicos[activeTab]({ carouselItems })}
+      {abasServicos[activeTab]({ carouselItems, fadeInClass })}
     </div>
   );
 }

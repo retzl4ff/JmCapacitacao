@@ -3,12 +3,21 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Button } from 'reactstrap';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Calendary from './Calendary';
+import { Button } from 'reactstrap';
 
-/* eslint-disable react/prop-types */
-export default function Presencial({ carouselItems }) {
+const currentDate = new Date();
+const nextMonth = new Date(
+  currentDate.getMonth() < 11
+    ? currentDate.getFullYear()
+    : currentDate.getFullYear() + 1,
+  currentDate.getMonth() < 11 ? currentDate.getMonth() + 1 : 0,
+  1
+);
+
+export default function Presencial({ fadeInClass }) {
   return (
     <>
       <div>
@@ -21,83 +30,129 @@ export default function Presencial({ carouselItems }) {
         >
           <div className="header-servicos d-flex justify-content-center mb-1">
             <span className="text-center">
-              &quot;Mas o meu curso tem que ser presencial...&quot;
+              &quot;Mas o meu curso precisa ser presencial...&quot;
             </span>
           </div>
           <div className="descricao-servicos d-flex justify-content-center text-center w-100">
             <div className="w-75">
-              <p>
-                Com a nossa plataforma de treinamentos online você pode fazer os
-                nossos cursos de normas regulamentadoras de onde você estiver
+              <p style={{ fontSize: '18px' }}>
+                Não tem problema! Para isso contamos com{' '}
+                <b className="gradient-blue">duas modalidades</b> para atender
+                você:
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div
-        className="carousel-servicos-section"
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          width: '60%',
-        }}
-      >
-        <Swiper
-          effect="coverflow"
-          modules={[Pagination, EffectCoverflow, Navigation]}
-          pagination={{ clickable: true }}
-          navigation={true}
-          slidesPerView={3}
-          loop={true}
-          centeredSlides={true}
-          spaceBetween={20}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 75,
-            scale: 0.95,
-            modifier: 1,
-            slideShadows: false,
-          }}
-          breakpoints={{
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            640: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+      <div className="d-flex flex-wrap">
+        <div
+          className={`carousel-servicos-section ${fadeInClass}`}
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginBottom: '50px',
+            width: '45%',
+            padding: '0px 50px',
           }}
         >
-          {carouselItems.map(({ imageSrc, description }, index) => (
-            <SwiperSlide key={index} className="mb-5">
-              <div
-                className="d-flex flex-column align-items-center border"
-                style={{ borderRadius: '20px' }}
+          <div className="px-5 pb-2">
+            <h3 className="gradient-blue-2 w-50">Turmas Abertas</h3>
+            <span
+              style={{ color: '#00084d', fontSize: '17px', fontWeight: '400' }}
+            >
+              Se você não possui uma turma com colaboradores suficientes para
+              preencher uma turma fechada, essa modalidade é para você!
+            </span>
+            <div>
+              <p
+                className="text-center pt-3 py-1 px-3"
+                style={{
+                  color: '#00084d',
+                  borderRadius: '13px',
+                  fontSize: '17px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  width: '85%',
+                }}
               >
-                <img
-                  src={imageSrc}
-                  alt={description}
-                  style={{ width: '100%', borderRadius: '20px 20px 0px 0px' }}
-                />
-                <div
-                  className="p-3 text-center d-flex flex-column justify-content-center align-items-center"
-                  style={{ width: '85%' }}
-                >
-                  <span style={{ fontWeight: '500' }}>{description}</span>
-                  <Button className="w-100 mt-1 mb-1 border-0 adquirir-button">
-                    Adquirir
-                  </Button>
-                </div>
-              </div>
+                <span style={{ fontWeight: '500' }}>
+                  <b className="gradient-blue-2">Clique</b> em uma das datas
+                  abaixo e verifique a disponibilidade com o nosso time:
+                </span>
+              </p>
+            </div>
+          </div>
+          <Swiper
+            effect="coverflow"
+            modules={[Pagination, EffectCoverflow, Navigation]}
+            pagination={{ clickable: true }}
+            navigation={true}
+            slidesPerView={1}
+            centeredSlides={true}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 200,
+              scale: 1,
+              modifier: 1,
+              slideShadows: false,
+            }}
+          >
+            <SwiperSlide key="current_month_agenda" className="px-5 pb-5">
+              <Calendary date={currentDate} />
             </SwiperSlide>
-          ))}
-        </Swiper>
+            <SwiperSlide key="next_month_agenda" className="px-5 pb-5">
+              <Calendary date={nextMonth} />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div
+          className={`carousel-servicos-section ${fadeInClass}`}
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            width: '45%',
+            padding: '0px 50px',
+          }}
+        >
+          <div className="px-5">
+            <h3 className="gradient-blue" style={{ width: '55%' }}>
+              Turmas Fechadas
+            </h3>
+            <span
+              style={{ color: '#00084d', fontSize: '17px', fontWeight: '400' }}
+            >
+              E para você que já conta com o número necessário de colaboradores
+              para realizar um treinamento: <br />
+              <br />
+            </span>
+            <div className="d-flex justify-content-around flex-wrap">
+              <Button className="button">
+                <span
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: '16px',
+                    fontWeight: 500,
+                    fontStyle: 'normal',
+                  }}
+                >
+                  Enviar mensagem
+                </span>
+              </Button>
+              <Button className="button">
+                <span
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontSize: '16px',
+                    fontWeight: 500,
+                    fontStyle: 'normal',
+                  }}
+                >
+                  Enviar E-mail
+                </span>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

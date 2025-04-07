@@ -39,6 +39,10 @@
   .carousel-servicos-section {
     width: 85% !important;
   }
+
+  .button-nav-servicos {
+    width: 35% !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -81,6 +85,10 @@
 
   .carousel-servicos-section {
     width: 85% !important;
+  }
+
+  .nav-servicos-button .button-nav-servicos {
+    width: 55% !important;
   }
 }
 
@@ -248,12 +256,12 @@ h4 {
 
 .fade-in {
   opacity: 1;
-  transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .carousel-servicos-section {
@@ -315,4 +323,21 @@ h4 {
     background-color: #142091;
     color: white;
   }
+}
+
+.table {
+  table-layout: fixed;
+
+  th {
+    background-color: #00084d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    outline: none;
+    border: none;
+  }
+}
+
+.bg-blue {
+  background-color: #00084d;
 }
